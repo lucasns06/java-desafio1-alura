@@ -39,16 +39,24 @@ public class Desafio {
 
             switch (opcao){
                 case 1:
-                    System.out.printf("Saldo Atual: %.2f\n", saldo);
+                    System.out.printf("Saldo Atual: R$ %.2f\n", saldo);
                     break;
                 case 2:
                     System.out.print("Digite o valor para receber: ");
                     double valorRecebido = leitor.nextDouble();
                     saldo += valorRecebido;
-                    System.out.printf("\nSaldo atualizado: %.2f\n", saldo);
+                    System.out.printf("\nSaldo atualizado: R$ %.2f\n", saldo);
                     break;
                 case 3:
-                    System.out.println("Um digitado uhul2");
+                    System.out.print("Digite o valor para transferir: ");
+                    double valorTransferido = leitor.nextDouble();
+                    if(valorTransferido <= saldo)
+                    {
+                        saldo -= valorTransferido;
+                        System.out.printf("\nSaldo atualizado: R$ %.2f\n", saldo);
+                    } else {
+                        System.out.println("\nNão há saldo o suficiente!");
+                    }
                     break;
                 case 4:
                     System.out.println("Saindo...");
